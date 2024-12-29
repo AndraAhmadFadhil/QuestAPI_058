@@ -4,7 +4,7 @@ import android.app.Application
 import com.example.pampertemuan12.dependenciesinjection.AppContainer
 import com.example.pampertemuan12.dependenciesinjection.MahasiswaContainer
 
-class MahasiswaApp: Application() {
+class MahasiswaApplication: Application() {
 
     lateinit var container: AppContainer
     override fun onCreate() {
