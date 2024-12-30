@@ -39,11 +39,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pampertemuan12.R
-import com.example.pampertemuan12.data.Mahasiswa
+import com.example.pampertemuan12.model.Mahasiswa
 import com.example.pampertemuan12.ui.customwidget.CostumeTopAppBar
 import com.example.pampertemuan12.ui.navigation.DestinasiNavigasi
 import com.example.pampertemuan12.ui.viewmodel.HomeUiState
 import com.example.pampertemuan12.ui.viewmodel.HomeViewModel
+import com.example.pampertemuan12.ui.viewmodel.PenyediaViewModel
 
 object DestinasiHome: DestinasiNavigasi {
     override val route = "Home"
@@ -54,7 +55,7 @@ object DestinasiHome: DestinasiNavigasi {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    navigateToltemEntry: ()-> Unit,
+    navigateToItemEntry: ()-> Unit,
     modifier: Modifier = Modifier,
     onDetailClick: (String) -> Unit = {},
     viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
@@ -74,7 +75,7 @@ fun HomeScreen(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = navigateToltemEntry,
+                onClick = navigateToItemEntry,
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(18.dp)
             ) {
